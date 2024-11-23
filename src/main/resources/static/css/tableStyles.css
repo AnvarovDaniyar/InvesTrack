@@ -1,0 +1,161 @@
+
+table {
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    margin: 20px auto 0 auto;
+    position: relative;
+    font-weight: normal;
+}
+
+table * {
+    position: relative
+}
+
+table td, table th {
+    padding-left: 8px;
+    font-weight: normal;
+}
+
+table thead tr {
+    height: 50px;
+    background: #335188
+}
+
+table tbody tr {
+    height: 50px
+}
+
+table td.r, table th.r {
+    text-align: center
+}
+
+.table100-head th {
+    font-size: 16px;
+    color: #fff;
+    line-height: 1.2;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #eef0f6
+}
+
+tbody tr {
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+@media (hover: hover) {
+    tbody tr:hover {
+        color: #555;
+        background-color: #afb8d5;
+        cursor: pointer
+    }
+}
+
+.column1 {
+    text-align: left;
+}
+
+.column2 {
+    text-align: right;
+}
+
+.column3 {
+    text-align: right;
+}
+
+.column4 {
+    text-align: right;
+}
+
+.column5 {
+    text-align: right;
+    padding-right: 8px;
+}
+
+@media (max-width: 750px) {
+    table {
+        display: table;
+        margin-top: 0;
+    }
+
+    table tr {
+        display: flex;
+        flex-direction: column;
+    }
+
+    table td {
+        display: flex;
+        flex-direction: row;
+    }
+
+    table thead {
+        display: none
+    }
+
+    table tbody tr {
+        height: auto;
+        padding: 13px 13px;
+        font-size: 18px;
+    }
+
+    table tbody tr td {
+        margin-bottom: 13px
+    }
+
+    table tbody tr td:last-child {
+        margin-bottom: 0
+    }
+
+    table tbody tr td:before {
+        font-size: 18px;
+        left: 30px;
+        top: 0
+    }
+
+    table tbody tr:nth-child(1) {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    table tbody tr:nth-last-child(1) {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    table tbody tr td:nth-child(1) {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    table tbody tr td:nth-child(2):before {
+        content: "Start Amount"
+    }
+
+    table tbody tr td:nth-child(3):before {
+        content: "Annual Contribution"
+    }
+
+    table tbody tr td:nth-child(4):before {
+        content: "Annual Interest"
+    }
+
+    table tbody tr td:nth-child(5):before {
+        content: "End Balance"
+    }
+
+
+    .column1, .column2, .column3, .column4, .column5 {
+        text-align: left;
+        padding: 0;
+        width: 100%;
+    }
+
+    .rsText {
+        margin-left: auto;
+    }
+
+}
