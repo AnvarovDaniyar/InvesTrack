@@ -217,14 +217,14 @@ input[type=submit] {
 .currency::after {
     display: block;
     float: right;
-    content: "€";
+    content: "₸";
     color: grey;
 }
 
 .years::after {
     display: block;
     float: right;
-    content: "years";
+    content: "лет";
     color: grey;
 }
 
@@ -256,11 +256,11 @@ input[type=submit] {
 }
 
 #add-btn:after {
-    content: "Add phase";
+    content: "Добавить этап";
 }
 
 #rm-btn:after {
-    content: "Remove phase";
+    content: "Удалить этап";
 }
 
 #add-btn, #rm-btn {

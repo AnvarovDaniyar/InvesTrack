@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <title>Investment Journey Calculator</title>
+    <title>Инвестиционный калькулятор</title>
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
     <script async data-ad-client="ca-pub-1934274965955998"
@@ -12,8 +12,7 @@
     <link rel="stylesheet" th:href="@{/css/tableStyles.css}" />
     <link th:href="@{/css/roboto.css}" rel="stylesheet">
     <link th:href="@{/css/material-icons.css}" rel="stylesheet">
-    <link th:href="@{/css/cookieconsent.min.css}" rel="stylesheet"
-        type="text/css" />
+    
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TPHV3RME1"></script>
     <script>
@@ -32,7 +31,7 @@
     <div class="sticky-header">
         <div class="header-content">
             <a th:href="@{/}">
-                <img alt="Investment Journey Calculator" height="55px" th:src="@{/images/investment-journey-logo.png}">
+                <img alt="Инвестиционный калькулятор" height="55px" th:src="@{/images/investment-journey-logo.png}">
             </a>
         </div>
     </div>
@@ -40,7 +39,7 @@
     <div class="content-wrapper" th:fragment="content-wrapper">
 
         <div id="privacy-policy" th:if="${showPrivacyPolicy == true && showImprint == false}">
-            <h1>Privacy Policy</h1>
+            <h1>Политика конфиденциальности</h1>
 
             <p>Investment Journey Calculator operates the https://investmentjourneycalc.com website, which provides the
                 SERVICE.</p>
@@ -161,50 +160,41 @@
                 <input class="toggle" id="collapsible" type="checkbox">
                 <label class="lbl-toggle" for="collapsible">
                     <span class="material-icons-outlined">info</span>
-                    <span class="info-txt">Information</span>
+                    <span class="info-txt">Информация</span>
                 </label>
                 <div class="collapsible-content">
                     <div class="content-inner">
                         <span>
-                            Using the investment journey calculator you calculate how much your investments will grow
-                            over a period of time.
-                            The parameters which have an impact on the final investment value are the initial
-                            investment, periodic contributions,
-                            contribution frequency, the expected growth and the duration. Due to the factored in
-                            compound interest, the investment value grows exponentially over time.
+                            Используя инвестифионный калькулятор, вы можете рассчитать, насколько вырастут ваши 
+                            инвестиции за определённый период времени. Параметры, которые влияют на конечную сумму инвестиций, 
+                            включают начальную сумму, периодические взносы, частоту взносов, ожидаемый рост и длительность. 
+                            Благодаря учёту сложного процента, стоимость инвестиций увеличивается экспоненциально с течением времени
                         </span>
                         <p>
-                            An investment journey is usually characterized by a shift in risk tolerance and availability
-                            of
-                            money over the course of a lifetime. In certain phases of a life,
-                            investors are more willing to take risks and expect higher returns while in other phases,
-                            security
-                            and the protection of accumulated wealth is the main focus.
-                            Similarly, in certain phases of life, investors have more money available to invest while in
-                            others
-                            less. This concept is integrated into the investment journey calculator
-                            in the form of "phases" for which you specify the parameters for the specified duration.
+                            Инвестиционный путь обычно характеризуется изменением уровня терпимости к риску и доступности
+                            денежных средств на протяжении жизни. В определённые периоды жизни
+                            инвесторы готовы принимать больше рисков и ожидают более высокой доходности, в то время как в другие
+                            периоды основное внимание уделяется безопасности и защите накопленного капитала.
+                            Аналогично, в определённые периоды у инвесторов больше средств для инвестиций, а в другие — меньше.
+                            Эта концепция реализована в калькуляторе инвестиционного пути
+                            в виде "инвестиций", для которых вы задаёте параметры на заданную продолжительность.
                         </p>
                         <span>
-                            Parameters:
+                            Параметры:
                             <ul>
-                                <li><b>Initial Investment</b> - The initial amount of money you start your investment
-                                    journey
-                                    with
+                                <li><b>Начальная инвестиция</b> - Сумма денег, с которой вы начинаете свой 
+                                    инвестиционный путь
                                 </li>
-                                <li><b>Periodic Contribution</b> - The amount of money you want to add to your
-                                    investments in
-                                    the specified contribution frequency
+                                <li><b>Периодический вклад</b> - Сумма денег, которую вы хотите добавлять к своим 
+                                    инвестициям с указанной частотой взносов
                                 </li>
-                                <li><b>Contribution Frequency</b> - How often you want to contribute the specified
-                                    periodic
-                                    contribution
+                                <li><b>Частота взносов</b> - Как часто вы хотите вносить указанный периодический вклад
                                 </li>
-                                <li><b>Annual Growth</b> - The expected rate at which your investments grow annually
-                                    (e.g. MSCI
-                                    World: 8,08 % in the past 10 years)
+                                <li><b>Годовой рост</b> - Ожидаемая процентная ставка, с которой ваши инвестиции будут 
+                                    расти ежегодно (например, MSCI World: 8,08 % за последние 10 лет)
                                 </li>
-                                <li><b>Duration</b> - The amount of years you plan to follow this investment phase</li>
+                                <li><b>Длительность</b> - Количество лет, в течение которых вы планируете следовать 
+                                    этой инвестиционной стратегии</li>
                             </ul>
                         </span>
                     </div>
@@ -220,7 +210,7 @@
             <form action="/calculate" autocomplete="off" id="form" method="POST">
 
                 <div class="form-input-wrapper">
-                    <label for="inInv">Initial Investment</label>
+                    <label for="inInv">Начальная инвестиция</label>
                     <span class="input-element currency">
                         <input id="inInv" name="initialInvestment" placeholder="1000.0" required th:min="0"
                             type="number">
@@ -229,32 +219,32 @@
                 <div class="all-phases" id="all-phases">
 
                     <div class="phase">
-                        <div class="phase-title">Phase 1</div>
+                        <div class="phase-title">Этап 1</div>
                         <div class="form-input-wrapper part-of-phase">
-                            <label for="perContr">Periodic Contribution</label>
+                            <label for="perContr">Периодический вклад</label>
                             <span class="input-element currency">
                                 <input id="perContr" name="periodicContribution" placeholder="100.0" required th:min="0"
                                     type="number">
                             </span>
                         </div>
                         <div class="form-input-wrapper part-of-phase">
-                            <label for="contrFreq">Contribution Frequency</label>
+                            <label for="contrFreq">Частота взносов</label>
                             <select id="contrFreq" name="contributionFrequency">
-                                <option selected th:text="Monthly" th:value="1"></option>
-                                <option th:text="Quarterly" th:value="3"></option>
-                                <option th:text="Semi-Annually" th:value="6"></option>
-                                <option th:text="Annually" th:value="12"></option>
+                                <option selected value="1">Ежемесячно</option>
+                                <option value="3">Ежеквартально</option>
+                                <option value="6">Раз в полгода</option>
+                                <option value="12">Ежегодно</option>
                             </select>
                         </div>
                         <div class="form-input-wrapper part-of-phase">
-                            <label for="annGrowth">Annual Growth</label>
+                            <label for="annGrowth">Годовой рост</label>
                             <span class="input-element percentage">
                                 <input id="annGrowth" name="annualGrowth" placeholder="8.0" required th:max="100"
                                     th:min="-100" type="number">
                             </span>
                         </div>
                         <div class="form-input-wrapper part-of-phase">
-                            <label for="durat">Duration</label>
+                            <label for="durat">Длительность</label>
                             <span class="input-element years">
                                 <input id="durat" name="duration" placeholder="10" required th:max="100" th:min="1"
                                     type="number">
@@ -271,7 +261,7 @@
                         <button disabled id="rm-btn" th:onclick="removeLatestPhaseFromForm()" type="button"></button>
                     </div>
 
-                    <input type="submit" value="Calculate">
+                    <input type="submit" value="Рассчитать">
                 </div>
             </form>
 
@@ -290,15 +280,15 @@
                     <div class="results-overview">
                         <div class="numbers-overview" th:if="${totalResult != null}">
                             <p id="final-investment-value-text">
-                                The total value of your investment will be<br>
+                                Общая стоимость ваших инвестиций составит<br>
                                 <span id="final-investment-value-text-amount"></span>
                             </p>
                             <div id="rest-numbers">
-                                <p class="rest-number-field" id="start-balance-text">Starting Balance: <br><span
+                                <p class="rest-number-field" id="start-balance-text">Начальный баланс: <br><span
                                         class="euro-amount" id="start-balance-text-amount"></span></p>
-                                <p class="rest-number-field" id="total-contributions-text">Own Contributions: <br><span
+                                <p class="rest-number-field" id="total-contributions-text">Собственные взносы: <br><span
                                         class="euro-amount" id="total-contributions-text-amount"></span></p>
-                                <p class="rest-number-field" id="total-interest-text">Interest Earned: <br><span
+                                <p class="rest-number-field" id="total-interest-text">Начисленные проценты: <br><span
                                         class="euro-amount" id="total-interest-text-amount"></span></p>
                             </div>
                         </div>
@@ -316,11 +306,11 @@
                         <div class="table-content">
                             <thead>
                                 <tr class="table100-head">
-                                    <th class="column1"> Year</th>
-                                    <th class="column2"> Start Amount</th>
-                                    <th class="column3"> Annual Contribution</th>
-                                    <th class="column4"> Annual Interest</th>
-                                    <th class="column5"> End Balance</th>
+                                    <th class="column1"> Год</th>
+                                    <th class="column2"> Начальная сумма</th>
+                                    <th class="column3"> Ежегодный вклад</th>
+                                    <th class="column4"> Ежегодный процент</th>
+                                    <th class="column5"> Итоговый баланс</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -334,22 +324,22 @@
                                                 th:text="${annualResult.getStartBalance()}"></span><span
                                                 class="annual-start-balance-text rsText"
                                                 th:text="${#numbers.formatDecimal(annualResult.getStartBalance(), 1, 'POINT', 2, 'COMMA')}"></span>
-                                            €</td>
+                                            ₸</td>
                                         <td class="column3"><span class="hidden hidden-annual-contribution-text"
                                                 th:text="${annualResult.getAnnualContribution()}"></span><span
                                                 class="annual-contribution-text rsText"
                                                 th:text="${#numbers.formatDecimal(annualResult.getAnnualContribution(), 1, 'POINT', 2, 'COMMA')}"></span>
-                                            €</td>
+                                            ₸</td>
                                         <td class="column4"><span class="hidden hidden-annual-interest-text"
                                                 th:text="${annualResult.getAnnualInterest()}"></span><span
                                                 class="annual-interest-text rsText"
                                                 th:text="${#numbers.formatDecimal(annualResult.getAnnualInterest(), 1, 'POINT', 2, 'COMMA')}"></span>
-                                            €</td>
+                                            ₸</td>
                                         <td class="column5"><span class="hidden hidden-annual-end-balance-text"
                                                 th:text="${annualResult.getEndBalance()}"></span><span
                                                 class="annual-end-balance-text rsText"
                                                 th:text="${#numbers.formatDecimal(annualResult.getEndBalance(), 1, 'POINT', 2, 'COMMA')}"></span>
-                                            €</td>
+                                            ₸</td>
                                     </tr>
                                 </span>
                             </tbody>
@@ -360,16 +350,12 @@
         </div>
     </div>
 
-    <div class="additional-info-wrapper">
-        <a class="additional-info-item" href="/privacy">Privacy Policy</a>
-        <a class="additional-info-item" href="/imprint">Imprint</a>
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script th:src="@{/js/scripts.js}" type="application/javascript"></script>
-    <script data-cfasync="false" src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
-    <script th:src="@{/js/cookieConsent.js}" type="application/javascript"></script>
+    
 </body>
 
 </html>

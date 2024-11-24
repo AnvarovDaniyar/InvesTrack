@@ -28,9 +28,9 @@ function convertAndDisplayTotal() {
 
     function getAndDisplay(id) {
         const value = parseFloat(document.getElementById(id).innerHTML);
-        document.getElementById(id + '-text-amount').innerText = value.toLocaleString('de-DE', {
+        document.getElementById(id + '-text-amount').innerText = value.toLocaleString('kk-KZ', {
             style: "currency",
-            currency: "EUR"
+            currency: "KZT"
         });
     }
 
@@ -71,7 +71,7 @@ function createCharts(donutData, barData) {
 }
 
 function createDonutChart(data) {
-    const labels = ['Starting Balance', 'Own Contributions', 'Interest Earned'];
+    const labels = ['Начальный баланс', 'Собственные взносы', 'Заработанный процент'];
     const ctx = document.getElementById('donut-chart');
     const windowWidth = window.innerWidth;
     const donutChart = new Chart(ctx, {
@@ -103,14 +103,14 @@ function createDonutChart(data) {
                 tooltip: {
                     callbacks: {
                         label: function (tooltipItem) {
-                            return labels[tooltipItem.dataIndex] + ': ' + tooltipItem.formattedValue + ' €'
+                            return labels[tooltipItem.dataIndex] + ': ' + tooltipItem.formattedValue + ' ₸'
                         }
                     },
                     bodySpacing: 4
                 },
                 title: {
                     display: true,
-                    text: 'Composition of Final Investment Value',
+                    text: 'Состав конечной стоимости инвестиций',
                     font: {
                         size: 18,
                         family: "'Roboto', 'sans-serif'",
@@ -130,13 +130,13 @@ function creatBarChart(data) {
             labels: data.years,
             datasets: [
                 {
-                    label: 'Own Contributions',
+                    label: 'Собственные взносы',
                     data: data.contributions,
                     borderWidth: 1,
                     backgroundColor: 'rgba(255, 190, 26, 0.8)'
                 },
                 {
-                    label: 'Interest Earned',
+                    label: 'Начисленные проценты',
                     data: data.interests,
                     borderWidth: 1,
                     backgroundColor: 'rgba(51, 204, 51, 0.8)'
@@ -158,9 +158,9 @@ function creatBarChart(data) {
                     ticks: {
                         // Include a dollar sign in the ticks
                         callback: function (value, index, values) {
-                            return parseFloat(value).toLocaleString('de-DE', {
+                            return parseFloat(value).toLocaleString('kk-KZ', {
                                 style: "currency",
-                                currency: "EUR"
+                                currency: "KZT"
                             });
                         }
                     }
@@ -181,7 +181,7 @@ function creatBarChart(data) {
                 },
                 title: {
                     display: true,
-                    text: 'Investment Growth per Year',
+                    text: 'Рост инвестиций по годам',
                     font: {
                         size: 18,
                         family: "'Roboto', 'sans-serif'",
@@ -191,29 +191,29 @@ function creatBarChart(data) {
                 tooltip: {
                     callbacks: {
                         beforeTitle: function (tooltipItem) {
-                            return 'In ' + tooltipItem[0].label + ',';
+                            return 'В ' + tooltipItem[0].label + ',';
                         },
                         title: function (tooltipItem) {
                             let sum = 0;
                             for (let item of tooltipItem) {
                                 sum += item.parsed.y;
                             }
-                            const sumFormatted = sum.toLocaleString('de-DE', {
+                            const sumFormatted = sum.toLocaleString('kk-KZ', {
                                 style: "currency",
-                                currency: "EUR"
+                                currency: "KZT"
                             });
-                            return 'the growth is ' + sumFormatted;
+                            return 'Рост составляет ' + sumFormatted;
                         },
                         label: function (tooltipItem) {
-                            return tooltipItem.dataset.label + ': ' + tooltipItem.formattedValue + ' €'
+                            return tooltipItem.dataset.label + ': ' + tooltipItem.formattedValue + ' ₸'
                         },
                         footer: function (tooltipItems) {
                             const totalValue = parseFloat(data.endBalances[tooltipItems[0].dataIndex]);
-                            const formattedValue = totalValue.toLocaleString('de-DE', {
+                            const formattedValue = totalValue.toLocaleString('kk-KZ', {
                                 style: "currency",
-                                currency: "EUR"
+                                currency: "KZT"
                             });
-                            return 'Total Investment Value: ' + formattedValue;
+                            return 'Общая стоимость инвестиций: ' + formattedValue;
                         },
                     },
                     titleFont: {
@@ -270,32 +270,32 @@ function currentPhasesCount() {
 
 const newPhaseAsHtml = (newPhaseCount) => {
     return '<div class="phase additional-phase" id="phase-' + newPhaseCount + '">\n' +
-        '            <div class="phase-title">Phase ' + newPhaseCount + '</div>\n' +
+        '            <div class="phase-title">Этап ' + newPhaseCount + '</div>\n' +
         '               <div class="form-input-wrapper part-of-phase">\n' +
-        '                   <label for="perContr-' + newPhaseCount + '">Periodic Contribution</label>\n' +
+        '                   <label for="perContr-' + newPhaseCount + '">Периодический вклад</label>\n' +
         '                   <span class="input-element currency">\n' +
         '                       <input id="perContr-' + newPhaseCount + '" name="periodicContribution" placeholder="100.0" required\n' +
         '                       min="0" type="number">\n' +
         '                   </span>\n' +
         '               </div>\n' +
         '               <div class="form-input-wrapper part-of-phase">\n' +
-        '                   <label for="contrFreq-' + newPhaseCount + '">Contribution Frequency</label>\n' +
+        '                   <label for="contrFreq-' + newPhaseCount + '">Частота взносов</label>\n' +
         '                   <select id="contrFreq-' + newPhaseCount + '" name="contributionFrequency">\n' +
-        '                       <option value="1" selected>Monthly</option>\n' +
-        '                       <option value="3">Quarterly</option>\n' +
-        '                       <option value="6">Semi-Annually</option>\n' +
-        '                       <option value="12">Annually</option>\n' +
+        '                       <option value="1" selected>Ежемесячно</option>\n' +
+        '                       <option value="3">Ежеквартально</option>\n' +
+        '                       <option value="6">Раз в полгода</option>\n' +
+        '                       <option value="12">Ежегодно</option>\n' +
         '                </select>\n' +
         '            </div>\n' +
         '            <div class="form-input-wrapper part-of-phase">\n' +
-        '                <label for="annGrowth-' + newPhaseCount + '">Annual Growth</label>\n' +
+        '                <label for="annGrowth-' + newPhaseCount + '">Годовой рост</label>\n' +
         '                <span class="input-element percentage">\n' +
         '                <input id="annGrowth-' + newPhaseCount + '" name="annualGrowth" placeholder="8.0" required max="100"\n' +
         '                       min="-100" type="number">\n' +
         '                </span>\n' +
         '            </div>\n' +
         '            <div class="form-input-wrapper part-of-phase">\n' +
-        '                <label for="durat-' + newPhaseCount + '">Duration</label>\n' +
+        '                <label for="durat-' + newPhaseCount + '">Длительность</label>\n' +
         '                <span class="input-element years">\n' +
         '                <input id="durat-' + newPhaseCount + '" name="duration" placeholder="10" required max="100"\n' +
         '                       min="1" type="number">\n' +
